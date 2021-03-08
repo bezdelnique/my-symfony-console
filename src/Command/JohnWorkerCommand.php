@@ -3,10 +3,10 @@
 namespace App\Command;
 
 
-use App\Component\Logger\ConsoleLogger;
 use App\Job\JohnWorker;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Logger\ConsoleLogger;
 use Symfony\Component\Console\Output\OutputInterface;
 
 final class JohnWorkerCommand extends Command
@@ -36,10 +36,8 @@ final class JohnWorkerCommand extends Command
     {
         $output->writeln("Starting\n");
 
-        $logger = new ConsoleLogger($output);
-
         // $this->johnWorker->run();
-        $johnWorker = new JohnWorker($logger);
+        $johnWorker = new JohnWorker(new ConsoleLogger($output));
         $johnWorker->run();
         return self::SUCCESS;
     }

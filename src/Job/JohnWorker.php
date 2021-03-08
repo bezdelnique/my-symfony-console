@@ -4,17 +4,16 @@
 namespace App\Job;
 
 
-use App\Component\Logger\ConsoleLogger;
-use Symfony\Component\Console\Output\OutputInterface;
+use Psr\Log\LoggerInterface;
 
 class JohnWorker
 {
     /**
-     * @var ConsoleLogger
+     * @var LoggerInterface
      */
-    private ConsoleLogger $logger;
+    private $logger;
 
-    public function __construct(ConsoleLogger $logger)
+    public function __construct(LoggerInterface $logger)
     {
         $this->logger = $logger;
     }
