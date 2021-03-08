@@ -8,6 +8,7 @@ $application = new Symfony\Component\Console\Application();
 
 // Register all Commands
 $application->add(new App\Command\HelloCommand());
+$application->add(new App\Command\JohnWorkerCommand());
 
 // Run it
 $application->run();

@@ -2,7 +2,8 @@
     "name": "",
     "description": "",
     "require": {
-        "symfony/console": "^5.2"
+        "symfony/console": "^5.2",
+        "psr/log": "^1.1"
     },
     "autoload": {
         "psr-4": {
